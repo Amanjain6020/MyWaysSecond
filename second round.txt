@@ -1,0 +1,65 @@
+//Request Body
+
+perl
+{
+"name": "John doe",
+"email":"johndoe@example.com",
+"password": "password123"
+}
+
+//Response
+json
+
+{
+"token": "jbcjhsbcsdhjbcshdbchdbchbcdshbshbebhbbchbchbdcbuihfewbebfiuiue";
+}
+
+//Request Body
+perl
+
+{
+"email": "johndoe@example.com",
+
+"password" : "password123"
+}
+
+//Response
+json
+{
+"token": "nksjdcnvnuujnbghfjdmnbvhfjdkmnvhjfdxncvfhjd";
+}
+
+
+//Request Header
+Authorization: Bearer <JWT>
+
+
+
+
+
+//Response
+Status 200 OK
+Status 401 Unauthorized
+
+//javascript
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+const plaintextPassword = 'password123';
+
+bcrypt.hash(plaintextPassword, saltRounds, function(err, hash){
+});
+
+
+//to verify a password you can use 'bcrypt.compare' method
+const bcrypt = required('bcrypt');
+const plaintextPassword = 'password123';
+const hashedPassword = "..."; // Retrieved from database
+
+bcrypt.compare(plaintextPassword, hashedPassword, function(err, result){
+if (result === true){
+//Password match
+}else{
+//Password don't match
+}
+});
